@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Bugle Photo Rater</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="eyebrow">THE DAILY BUGLE • PHOTO DESK</div>
+    <h1>DAILY BUGLE</h1>
+    <p class="tagline">PHOTO RATER — GET THE PICTURE RIGHT!</p>
+  </header>
+
+  <main class="container">
+    <section class="panel upload-panel">
+      <h2>UPLOAD YOUR PHOTO</h2>
+      <p class="sub">Let the editor judge your shot.</p>
+
+      <label class="dropzone" id="dropzone">
+        <input id="fileInput" type="file" accept="image/jpeg,image/png" hidden>
+        <div class="upload-icon">📸</div>
+        <strong>Drag & drop your JPEG/PNG here</strong>
+        <span>or click to choose a photo • max 8 MB</span>
+      </label>
+
+      <div class="preview-wrap hidden" id="previewWrap">
+        <img id="preview" alt="Selected photo preview">
+        <button class="secondary" id="changeBtn" type="button">Choose another</button>
+      </div>
+
+      <button class="primary" id="analyzeBtn" type="button" disabled>
+        GET JAMESON'S VERDICT
+      </button>
+
+      <p class="status" id="status"></p>
+    </section>
+
+    <section class="result hidden" id="result">
+      <div class="newspaper-headline">
+        <span>EXTRA! EXTRA!</span>
+        <h2 id="headline">PHOTO REVIEW</h2>
+      </div>
+
+      <div class="score-row">
+        <div class="score" id="overallScore">--</div>
+        <div>
+          <div class="label">OVERALL PHOTO SCORE</div>
+          <p id="verdict"></p>
+        </div>
+      </div>
+
+      <div class="criteria">
+        <article class="criterion">
+          <h3>LIGHTING</h3>
+          <div class="bar"><span id="lightingBar"></span></div>
+          <strong id="lightingScore"></strong>
+          <p id="lightingComment"></p>
+        </article>
+        <article class="criterion">
+          <h3>FOCUS</h3>
+          <div class="bar"><span id="focusBar"></span></div>
+          <strong id="focusScore"></strong>
+          <p id="focusComment"></p>
+        </article>
+        <article class="criterion">
+          <h3>FRAMING</h3>
+          <div class="bar"><span id="framingBar"></span></div>
+          <strong id="framingScore"></strong>
+          <p id="framingComment"></p>
+        </article>
+      </div>
+
+      <blockquote id="quote"></blockquote>
+
+      <div class="comic-section">
+        <div>
+          <h2>TURN IT INTO A BUGLE COMIC</h2>
+          <p>Pop-art treatment generated directly in your browser.</p>
+        </div>
+        <canvas id="comicCanvas"></canvas>
+        <button class="primary" id="downloadBtn" type="button">DOWNLOAD COMIC</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>ALL THE NEWS THAT'S FIT TO RATE.</footer>
+  <script src="/app.js"></script>
+</body>
+</html>
